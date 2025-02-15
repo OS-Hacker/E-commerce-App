@@ -96,11 +96,16 @@ export const singleProductController = async (req, res) => {
 
 export const updateProductController = async (req, res) => {
   try {
-    const existUser = await productModel.findById(req.params.id);
+    const existingProduct = await productModel.findById(req.params.id);
 
-    await delete existUser.img;
+    if (!existingProduct) {
+      return res.status(404).json({ success: false, msg: "Product not found" });
+    }
 
-    // console.log(req.file);
+    // Delete the existing image
+    if (existingProduct.img) {
+      // Add your code to delete the image from your server/storage here
+    }
 
     const updateData = {
       name: req.body.name,
@@ -111,12 +116,11 @@ export const updateProductController = async (req, res) => {
     };
 
     if (req.file) {
-      const img = req.file.filename;
-      updateData.img = img;
+      updateData.img = req.file.filename;
     }
 
-    const product = await productModel.findByIdAndUpdate(
-      existUser,
+    const updatedProduct = await productModel.findByIdAndUpdate(
+      req.params.id,
       updateData,
       { new: true }
     );
@@ -124,10 +128,14 @@ export const updateProductController = async (req, res) => {
     res.status(200).json({
       success: true,
       msg: "Product Successfully Updated",
-      product,
+      product: updatedProduct,
     });
   } catch (error) {
-    console.log(error);
+    console.error("Error updating product:", error);
+    res.status(500).json({
+      success: false,
+      msg: "An error occurred while updating the product",
+    });
   }
 };
 

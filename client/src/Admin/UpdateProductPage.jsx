@@ -55,11 +55,6 @@ const UpdateProductPage = () => {
   const updateHandler = async (e) => {
     e.preventDefault();
 
-    if (!name || !price || !quantity) {
-      toast.error("Please fill in all required fields.");
-      return;
-    }
-
     try {
       const formData = new FormData();
 
@@ -79,7 +74,7 @@ const UpdateProductPage = () => {
         toast.success(data.msg, {
           position: "bottom-left",
         });
-        navigate("/Dashboard/admin/Show_Product");
+        navigate("/Deshbored/admin/Show_Product");
       }
     } catch (error) {
       console.error("Error updating product:", error);
@@ -141,7 +136,11 @@ const UpdateProductPage = () => {
               />
             ) : (
               singleImage && (
-                <img src={singleImage} alt="Existing" className="image" />
+                <img
+                  src={`${import.meta.env.VITE_BASE_URL}/${singleImage}`}
+                  alt="Existing"
+                  className="image"
+                />
               )
             )}
           </label>

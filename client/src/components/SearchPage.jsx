@@ -7,7 +7,7 @@ import { searchHook } from "../context/SearchContext";
 import INR from "./INR";
 import { addToCart } from "../redux-toolkit/CartSlice";
 
-const SearchProduct = () => {
+const SearchPage = () => {
   const Dispech = useDispatch();
 
   const addCartHandler = (e, products) => {
@@ -103,7 +103,7 @@ const Wrapper = styled.section`
     height: 100%;
   }
   .Product_card {
-    width: 90rem;
+    width: 120rem;
     height: 25rem;
     box-shadow: 5px 5px 8px 10px #888888;
     text-align: center;
@@ -116,15 +116,18 @@ const Wrapper = styled.section`
   }
 
   .container {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 
-  .image{
-    width: 90%;
-    height: 150px;
-  } 
+  
+
+  .Product_Img {
+    margin: 30px;
+  }
+
   p {
     font-size: 1.8rem;
     color: #9a9fa5;
@@ -151,6 +154,7 @@ const Wrapper = styled.section`
   .Product_btn {
     padding: 1.5rem 1.5rem;
   }
+
   .back_logo {
     width: 2rem;
     height: 0rem;
@@ -158,6 +162,7 @@ const Wrapper = styled.section`
     left: 100px;
     top: 40px;
   }
+
   .real-price {
     font-size: 1.8rem;
   }
@@ -239,4 +244,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default SearchProduct;
+export default SearchPage;
