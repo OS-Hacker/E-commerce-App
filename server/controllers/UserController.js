@@ -1,4 +1,4 @@
-import { Token, comparePass, heshPass } from "../helper/userAuth.js";
+import { comparePass, heshPass, Token } from "../helper/UserAuth.js";
 import { userModel } from "../model/UserModel.js";
 
 export const RegistationController = async (req, res) => {
@@ -114,7 +114,7 @@ export const loginController = async (req, res) => {
         address: registerUser.address,
         role: registerUser.role,
       },
-      token: token,
+      token,
     });
   } catch (error) {
     console.log(error);

@@ -24,11 +24,12 @@ export const comparePass = async (password, ExistUserPass) => {
 
 export const Token = async (user) => {
   try {
-    const token = JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
+    const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
+    console.log("Generated Token: ", token); // Log the generated token
     return token;
   } catch (error) {
-    console.log(error);
+    console.log("Error generating token: ", error); // Log detailed error
   }
 };

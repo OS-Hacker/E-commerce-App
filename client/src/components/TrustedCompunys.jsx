@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { FaAmazon } from "react-icons/fa";
+import { SiFlipkart } from "react-icons/si";
+import { FaShopify } from "react-icons/fa";
+import { SiWalmart } from "react-icons/si";
+import { SiBigbasket } from "react-icons/si";
 
 const TrustedCompunys = () => {
   return (
@@ -7,11 +12,11 @@ const TrustedCompunys = () => {
       <div className=" Main_Section ">
         <div className="compunysIcon">
           <marquee behavior="right" direction="">
-            <i className="bi bi-discord"></i>
-            <i className="bi bi-paypal"></i>
-            <i className="bi bi-google"></i>
-            <i className="bi bi-apple"></i>
-            <i className="bi bi-yelp"></i>
+            <FaAmazon className="bi" />
+            <SiFlipkart className="bi" />
+            <FaShopify className="bi" />
+            <SiWalmart className="bi" />
+            <SiBigbasket className="bi" />
           </marquee>
         </div>
       </div>
@@ -32,16 +37,16 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35vh;
+    height: 33vh;
   }
 
   .bi {
-    font-size: 7rem;
-    margin: 0rem 8rem;
-    box-shadow: 10px 3px 6px 4px #921eb9;
-    padding: 2rem;
+    font-size: 12rem;
+    padding: 1.3rem;
     border-radius: 2rem;
-}
+    margin: 0rem 8rem;
+    box-shadow: 10px 0px 5px 4px #921eb9;
+  }
 `;
 
 export default TrustedCompunys;

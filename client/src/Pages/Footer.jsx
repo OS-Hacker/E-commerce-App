@@ -120,7 +120,6 @@ const Wrapper = styled.footer`
     width: 320px;
     color: #f6f8fa;
     text-transform: uppercase;
-    font-family: cursive;
   }
 
   .text:hover {
@@ -131,14 +130,12 @@ const Wrapper = styled.footer`
     width: 320px;
     color: #f6f8fa;
     text-transform: uppercase;
-    font-family: cursive;
   }
 
   .para {
     font-size: 1.7rem;
     width: 320px;
     color: #f6f8fa;
-    font-family: cursive;
   }
 
   p {
@@ -158,7 +155,6 @@ const Wrapper = styled.footer`
   .Main_Link {
     font-size: 3rem;
     display: flex;
-    /* padding: 1rem 0px; */
   }
 
   .bi {
@@ -189,7 +185,6 @@ const Wrapper = styled.footer`
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
-    /* margin: 2rem; */
   }
 
   .flex2 {
