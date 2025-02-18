@@ -122,8 +122,6 @@ const Wrapper = styled.section`
     align-items: center;
   }
 
-  
-
   .Product_Img {
     margin: 30px;
   }
