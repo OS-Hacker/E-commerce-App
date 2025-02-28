@@ -5,12 +5,9 @@
   "main": "App.js",
   "type": "module",
   "scripts": {
-<<<<<<< HEAD
+
     "dev": "nodemon App.js",
     "start":"node App.js",
-=======
-    "dev": "node App.js",
->>>>>>> dcd119cde8bc0da3d5c940896693f789ad9333d6
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

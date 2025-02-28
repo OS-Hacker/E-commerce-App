@@ -1,6 +1,7 @@
 import JWT from "jsonwebtoken";
 import { userModel } from "../model/UserModel.js";
 
+// verify user is sign in or not / check user have token or not
 export const requiredSignIn = async (req, res, next) => {
   try {
     console.log(req.headers.authorization);

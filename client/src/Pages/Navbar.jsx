@@ -37,6 +37,8 @@ const Navbar = () => {
 
   const { token, user } = useSelector((state) => state?.auth);
 
+  // verify token
+  // if token is exist then send token to the server inside the headers
   useEffect(() => {
     if (token) {
       axios.defaults.headers.common["Authorization"] = token;

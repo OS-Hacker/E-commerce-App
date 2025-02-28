@@ -50,11 +50,11 @@ export const loginUser = createAsyncThunk(
       }
     } catch (error) {
       console.log(error);
-      if (error?.response.data.msg) {
+      if (error?.response?.data.msg) {
         toast.error(error?.response.data.msg, {
           position: "bottom-left",
         });
-        return rejectWithValue(error?.response.data.msg);
+        return rejectWithValue(error?.response?.data?.msg);
       }
     }
   }
